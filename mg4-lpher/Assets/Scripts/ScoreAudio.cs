@@ -12,7 +12,7 @@ public class ScoreAudio : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
     }
-    private void OnEnable()
+    private void Start()
     {
         ScoreController.Instance.OnScoreChanged += PlayScoreSound;
     }

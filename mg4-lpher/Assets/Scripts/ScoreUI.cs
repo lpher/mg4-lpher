@@ -10,17 +10,11 @@ public class ScoreUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreText;
     private void Start()
     {
-        if (ScoreController.Instance != null)
-        {
-            ScoreController.Instance.OnScoreChanged += UpdateScore;
-        }
+        ScoreController.Instance.OnScoreChanged += UpdateScore;
     }
-    private void OnDestroy()
+    private void OnDisable()
     {
-        if (ScoreController.Instance != null)
-        {
-            ScoreController.Instance.OnScoreChanged -= UpdateScore;
-        }
+        ScoreController.Instance.OnScoreChanged -= UpdateScore;
     }
     private void UpdateScore(int newScore)
     {

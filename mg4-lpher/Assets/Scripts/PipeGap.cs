@@ -12,10 +12,4 @@ public class PipeGap : MonoBehaviour
         float randomY = Random.Range(minY, maxY);
         transform.position = new Vector3(transform.position.x, randomY, 0f);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
